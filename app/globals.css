@@ -1,0 +1,39 @@
+/* globals.css */
+@import url('https://fonts.googleapis.com/css2?family=Barriecito&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{
+  --color-primary: #1911ae;
+  --color-pinky: #f6b0be;
+  --color-mint: #06e5a2;
+  --color-bg: #fef9f6;
+}
+
+html,body,#root{height:100%}
+body{background-color:var(--color-bg)}
+
+.button-pill{border-radius:9999px}
+.container{max-width:1100px}
+h1,h2,h3{letter-spacing: -0.01em}
+
+:focus{
+  outline:3px solid rgba(37,150,190,0.18);
+  outline-offset:2px;
+}
+
+.barriecito-regular {
+  font-family: "Barriecito", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.roboto {
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
