@@ -51,10 +51,6 @@ h3 {
   font-size: 1.5rem;
 }
 
-div {
-  padding: 1rem;
-}
-
 :focus{
   outline:3px solid rgba(37,150,190,0.18);
   outline-offset:2px;
@@ -107,4 +103,38 @@ div {
   border-style: dashed ;
   border-width: 0.3rem;
   padding: 0.7rem;
+}
+
+.card {
+  background: rgba(0, 0, 0, 0.03);
+  border-radius: 16px;
+  padding: 0.5rem 2rem 2rem 2rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  border-left: 4px solid var(--color-pinky);
+  transition: all 0.3s ease;
+  margin: 2rem 0;
+}
+
+.card:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  transform: translateY(-4px);
+  border-left-color: var(--color-primary);
+}
+
+.card p {
+  padding: 0;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.card ul {
+  padding: 0;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .card {
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+  }
 }

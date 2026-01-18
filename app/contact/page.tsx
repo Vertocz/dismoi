@@ -1,22 +1,21 @@
-// app/ateliers/page.js
+// app/contact/page.jsx
 export default function Contact() {
-  
   return (
-    <section className="max-w-3xl mx-auto">
+    <section className="max-w-4xl mx-auto">
       <h1>Nous contacter</h1>
-      <div>Pour toute demande d'information, construction d'intervention, devis ou prise de contact, vous pouvez nous écrire via le formulaire ci-dessous.<br/>
-      Nous reviendrons vers vous rapidement.</div>
 
-<h2>Formulaire de contact</h2>
-Nom - Prénom<br/>
-Structure<br/>
-Email<br/>
-Téléphone<br/>
-Message<br/>
-<br/>
-📍 Interventions : Loire-Atlantique et départements limitrophes (possibilités d'adaptation selon projets).<br/>
-📧 contact@dis-moi.net<br/>
-📞 0601020301<br/>
+      <div className="card">
+        <p>N'hésitez pas à nous contacter pour toute demande d'informations, construction d'interventions ou devis.</p>
+        <p className="mt-4">Nous reviendrons vers vous rapidement.</p>
+      </div>
+
+        <p className="font-bold">📧 contact@dis-moi.net</p>
+        <p className="font-bold mt-2">📞 06 01 02 03 01</p>
+
+      <div className="card">
+        <p>Les interventions peuvent se dérouler en Loire-Atlantique et dans les départements limitrophes.</p>
+        <p className="mt-4">Nous pouvons cependant adapter nos propositions en fonction des projets.</p>
+      </div>
     </section>
   )
 }

@@ -1,4 +1,4 @@
-// app/layout.js
+// app/layout.jsx
 import './globals.css'
 import { Nunito, Roboto, Barriecito } from 'next/font/google'
 import Header from '@/components/Header'
@@ -13,10 +13,10 @@ export const metadata = {
   description: 'Ateliers éducatifs autour de la vie affective, relationnelle et sexuelle'
 }
 
-export default function RootLayout({ children }) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="fr">
-      <body className='bg-[var(--color-bg)];'> 
+      <body className='bg-[var(--color-bg)]'>
         <div className="min-h-screen flex flex-col">
           <Header />
           <main className="flex-1 container mx-auto px-4 py-8">{children}</main>
