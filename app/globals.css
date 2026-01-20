@@ -22,11 +22,11 @@ body {
 .container{max-width:1100px}
 
 h1 {
-  font-size: 3rem;
+  font-size: 1.5rem;
   background-image: radial-gradient(var(--color-pinky) 3px, transparent 1px);
   background-size: 6px 5px;
   font-family: "Barriecito", system-ui;
-  padding: 1rem 2rem;
+  padding: 0.75rem 1rem;
   border-radius: 25px;
   text-decoration-line: none;
   max-width: fit-content;
@@ -34,7 +34,7 @@ h1 {
 
 h2 {
   font-family: "Barriecito", system-ui;
-  font-size: 2rem;
+  font-size: 1.25rem;
   background-image: repeating-linear-gradient(
     110deg,
     var(--color-mint) 0,
@@ -48,7 +48,39 @@ h2 {
 
 h3 {
   font-family: "Barriecito", system-ui;
-  font-size: 1.5rem;
+  font-size: 1.125rem;
+}
+
+/* Tailles pour tablettes */
+@media (min-width: 768px) {
+  h1 {
+    font-size: 2.25rem;
+    padding: 0.875rem 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+  }
+
+  h3 {
+    font-size: 1.375rem;
+  }
+}
+
+/* Tailles pour desktop */
+@media (min-width: 1024px) {
+  h1 {
+    font-size: 3rem;
+    padding: 1rem 2rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
 }
 
 :focus{
