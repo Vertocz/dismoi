@@ -9,8 +9,8 @@ export default function Contact() {
         <p className="mt-4">Nous reviendrons vers vous rapidement.</p>
       </div>
 
-        <p className="font-bold">📧 contact@dis-moi.net</p>
-        <p className="font-bold mt-2">📞 06 01 02 03 01</p>
+        <p className="font-bold mx-auto">📧 contact@dis-moi.net</p>
+        <p className="font-bold mt-2 mx-auto">📞 06 86 19 55 46</p>
 
       <div className="card">
         <p>Les interventions peuvent se dérouler en Loire-Atlantique et dans les départements limitrophes.</p>

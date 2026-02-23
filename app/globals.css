@@ -23,13 +23,11 @@ body {
 
 h1 {
   font-size: 1.5rem;
-  background-image: radial-gradient(var(--color-pinky) 3px, transparent 1px);
-  background-size: 6px 5px;
   font-family: "Barriecito", system-ui;
   padding: 0.75rem 1rem;
-  border-radius: 25px;
   text-decoration-line: none;
   max-width: fit-content;
+  border-bottom: 25px solid var(--color-pinky);
 }
 
 h2 {
@@ -110,13 +108,7 @@ h3 {
 }
 
 .titre {
-  background-image: repeating-linear-gradient(
-    110deg,
-    var(--color-mint) 0,
-    var(--color-mint) 2px,
-    transparent 2px,
-    transparent 6px
-  );
+  background-color: var(--color-mint);
   color: black;
   font-family: "Barriecito", system-ui;
   font-size: 1.4rem;
@@ -129,12 +121,8 @@ h3 {
 
 .titre:hover {
   color: var(--color-primary);
-  background-image: radial-gradient(var(--color-pinky) 3px, transparent 2px);
-  background-size: 6px 5px;
-  border-color: var(--color-primary);
-  border-style: dashed ;
-  border-width: 0.3rem;
-  padding: 0.7rem;
+  background-color: var(--color-pinky);
+  transition: all 0.3s ease;
 }
 
 .card {
