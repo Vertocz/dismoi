@@ -1,36 +1,46 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Dis-moi
 
-## Getting Started
+Site vitrine de **Dis-moi**, ateliers éducatifs autour de la vie affective, relationnelle et sexuelle.
 
-First, run the development server:
+Next.js (App Router) · Tailwind CSS v4 · polices auto-hébergées (Fontsource : Nunito, Barriecito).
+
+## Lancer le site en local
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Puis ouvrir http://localhost:3000.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `app/` : les pages (accueil, `ateliers`, `qui-sommes-nous`, `contact`) et la route `api/contact`
+- `components/` : en-tête, pied de page, formulaire de contact
+- `app/globals.css` : styles globaux et couleurs du site (bloc `@theme`)
 
-## Learn More
+## Formulaire de contact (pas encore activé)
 
-To learn more about Next.js, take a look at the following resources:
+Le composant `components/ContactForm.jsx` et la route `app/api/contact/route.js` sont prêts,
+mais le formulaire n'est pas affiché. Pour l'activer :
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Définir les variables d'environnement (par ex. dans `.env.local` ou chez l'hébergeur) :
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+   ```
+   SMTP_HOST=...
+   SMTP_PORT=587
+   SMTP_SECURE=false
+   SMTP_USER=...
+   SMTP_PASS=...
+   SMTP_FROM=contact@dis-moi.net      # adresse d'expédition autorisée par le serveur SMTP
+   CONTACT_RECEIVER=contact@dis-moi.net  # adresse qui reçoit les messages
+   ```
 
-## Deploy on Vercel
+   Sans ces variables, la route répond une erreur 503 (le visiteur est prévenu que l'envoi n'a pas marché).
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+2. Ajouter sous le formulaire une courte mention RGPD (à quoi servent les données, durée de conservation, contact).
+3. Ajouter `<ContactForm />` dans `app/contact/page.tsx`.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## À faire
+
+- Page **mentions légales** (obligatoire : éditeur, SIRET, hébergeur…).

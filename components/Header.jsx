@@ -2,11 +2,12 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
+import { usePathname } from 'next/navigation'
 import { useState } from 'react'
-import { Menu, X } from 'lucide-react'
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
+  const pathname = usePathname()
 
   const navLinks = [
     { href: '/qui-sommes-nous', label: 'Qui sommes-nous ?' },
@@ -15,8 +16,8 @@ export default function Header() {
   ]
 
   return (
-    <header className="sticky top-0 z-50 bg-white shadow-md border-b-4 border-[var(--color-mint)]">
-      <div className="container mx-auto px-4 py-4 flex items-center justify-between">
+    <header className="sticky top-0 z-50 bg-white shadow-md border-b-4 border-mint">
+      <div className="container mx-auto px-4 py-3 flex items-center justify-between">
         <div className="relative h-auto">
           <Link href="/" className="flex items-center gap-3">
             <Image
@@ -24,18 +25,19 @@ export default function Header() {
               alt="Logo Dis-moi"
               width={200}
               height={200}
-              className="w-32 md:w-56 lg:w-72 h-auto"
+              className="w-24 md:w-32 lg:w-36 h-auto"
             />
           </Link>
         </div>
 
         {/* Desktop Menu */}
-        <nav id="desktop-menu" className="items-center gap-2">
+        <nav id="desktop-menu" className="items-center gap-2" aria-label="Menu principal">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
               className="titre"
+              aria-current={pathname === link.href ? 'page' : undefined}
             >
               {link.label}
             </Link>
@@ -47,11 +49,13 @@ export default function Header() {
           id="menu-button"
           className="hamburger-button"
           onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Toggle menu"
+          aria-label={menuOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
+          aria-expanded={menuOpen}
+          aria-controls="mobile-menu"
         >
-          <span className={`hamburger-line ${menuOpen ? 'open' : ''}`}></span>
-          <span className={`hamburger-line ${menuOpen ? 'open' : ''}`}></span>
-          <span className={`hamburger-line ${menuOpen ? 'open' : ''}`}></span>
+          <span aria-hidden="true" className={`hamburger-line ${menuOpen ? 'open' : ''}`}></span>
+          <span aria-hidden="true" className={`hamburger-line ${menuOpen ? 'open' : ''}`}></span>
+          <span aria-hidden="true" className={`hamburger-line ${menuOpen ? 'open' : ''}`}></span>
         </button>
       </div>
 
@@ -62,12 +66,13 @@ export default function Header() {
             className="mobile-menu-overlay"
             onClick={() => setMenuOpen(false)}
           />
-          <nav className="mobile-menu">
+          <nav id="mobile-menu" className="mobile-menu" aria-label="Menu principal">
             {navLinks.map((link, index) => (
               <Link
                 key={link.href}
                 href={link.href}
                 className="titre mobile-menu-link"
+                aria-current={pathname === link.href ? 'page' : undefined}
                 onClick={() => setMenuOpen(false)}
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
@@ -155,7 +160,7 @@ export default function Header() {
 
         .mobile-menu {
           position: fixed;
-          top: 88px;
+          top: 130px;
           left: 50%;
           transform: translateX(-50%);
           width: 90%;
