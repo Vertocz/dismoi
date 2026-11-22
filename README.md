@@ -38,9 +38,9 @@ mais le formulaire n'est pas affiché. Pour l'activer :
 
    Sans ces variables, la route répond une erreur 503 (le visiteur est prévenu que l'envoi n'a pas marché).
 
-2. Ajouter sous le formulaire une courte mention RGPD (à quoi servent les données, durée de conservation, contact).
+2. Ajouter sous le formulaire une phrase renvoyant vers la page `/donnees-personnelles`.
 3. Ajouter `<ContactForm />` dans `app/contact/page.tsx`.
 
-## À faire
+## Pages légales
 
-- Page **mentions légales** (obligatoire : éditeur, SIRET, hébergeur…).
+`app/mentions-legales` et `app/donnees-personnelles` : à mettre à jour en cas de changement de structure (société, association…), d'adresse ou d'hébergeur.
