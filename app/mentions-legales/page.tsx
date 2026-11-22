@@ -18,7 +18,7 @@ export default function MentionsLegales() {
           micro-entreprise.
         </p>
         <ul>
-          <li>Adresse : 67 bis rue du Général de Gaulle, 44560 Paimbœuf</li>
+          <li>Adresse : 44560 Paimbœuf</li>
           <li>SIRET : 979 338 530 00012</li>
           <li>
             Téléphone : <a className="lien" href="tel:+33686195546">06 86 19 55 46</a>
