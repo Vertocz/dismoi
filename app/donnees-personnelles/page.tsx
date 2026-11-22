@@ -22,7 +22,7 @@ export default function DonneesPersonnelles() {
       <div className="card">
         <h2>Qui est responsable ?</h2>
         <p>
-          Victor Crézé, entrepreneur individuel (EI), 67 bis rue du Général de Gaulle, 44560 Paimbœuf —{' '}
+          Victor Crézé, entrepreneur individuel (EI), 44560 Paimbœuf —{' '}
           <a className="lien" href="mailto:contact@dis-moi.net">contact@dis-moi.net</a>.
         </p>
       </div>
